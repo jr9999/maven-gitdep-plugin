@@ -52,8 +52,10 @@ public class InstallerMojo extends AbstractMojo {
 	private List<GitDependency> gitDependencies;
 
 	private void install(POM pom, GitDependency dependency) {
+
 		final GitDependencyHandler dependencyHandler = new GitDependencyHandler(dependency);
 		final String version = dependencyHandler.getDependencyVersion(pom);
+		
 		final String tempDirectory = Directory.getTempDirectoryString(dependency.getLocation(), version);
 		final InvocationRequest request = new DefaultInvocationRequest();
 		final Invoker invoker = new DefaultInvoker();

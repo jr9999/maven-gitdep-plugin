@@ -46,8 +46,10 @@ public class CleanupMojo extends AbstractMojo {
 	private List<GitDependency> gitDependencies;
 
 	private void cleanup(POM pom, GitDependency dependency) {
+	    
 		final GitDependencyHandler dependencyHandler = new GitDependencyHandler(dependency);
 		final String version = dependencyHandler.getDependencyVersion(pom);
+	    
 		final String tempDirectory = Directory.getTempDirectoryString(dependency.getLocation(), version);
 		final File file = new File(tempDirectory);
 

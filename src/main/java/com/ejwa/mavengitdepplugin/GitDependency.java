@@ -21,10 +21,13 @@ package com.ejwa.mavengitdepplugin;
  * <http://www.gnu.org/licenses/>.
  */
 public class GitDependency {
+    
 	private String groupId;
 	private String artifactId;
 	private String location;
 	private String branch = "master";
+	private boolean reinstall = false;
+	private String version = "1.0-SNAPSHOT";
 
 	public String getArtifactId() {
 		return artifactId;
@@ -57,4 +60,20 @@ public class GitDependency {
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
+
+    public boolean getReinstall() {
+        return reinstall;
+    }
+
+    public void setReinstall(boolean reinstall) {
+        this.reinstall = reinstall;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }
